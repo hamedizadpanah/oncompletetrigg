@@ -1,0 +1,15 @@
+Dear {!Contact.FirstName},
+
+We appreciate your continued generosity to our organization.  Our records show that your credit card is due to expire: {!Recurring_Donation__c.Credit_Card_Expiry_Date__c}.
+
+Please click the link below to provide your new credit card information:
+
+Update my credit card info now
+
+https://www.opinov.com/breakeven/web/ccupdate.html?ekey={!Recurring_Donation__c.Encrypted_Key__c}&fname={!Contact.FirstName}&lname={!Contact.LastName}&amount={!Recurring_Donation__c.Amount__c}&RDID={!Recurring_Donation__c.Id}
+
+If you prefer, please call us at 905-752-1500 to provide your information.
+
+We thank you for your support!
+
+HN Foundation

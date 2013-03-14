@@ -1,0 +1,74 @@
+<apex:page standardController="causeview__Gift__c" extensions="causeview.MatchingControllerExtension" tabStyle="causeview__Gift__c">
+    <apex:sectionHeader title="New Matching Gift"/>
+    <apex:form id="theForm">
+        <apex:pageMessages ></apex:pageMessages> 
+        <apex:pageBlock id="theTransBlock" title="Transaction Details">
+            <apex:pageblockSection columns="1">  
+                <apex:inputField value="{!theGift.causeview__Organization__c}"/>  
+            </apex:pageBlockSection>      
+            <apex:pageblockSection id="theTransSection" columns="1">                                      
+                    <apex:outputField value="{!theGift.causeview__Gift_Date__c}"/> 
+
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!$ObjectType.causeview__Payment__c.fields.causeview__Payment_Type__c.label}"></apex:outputLabel>
+                        <apex:outputPanel layout="none">
+                            <apex:actionRegion >
+                                <apex:selectList required="true" size="1" value="{!pType}">
+                                    <apex:selectOptions value="{!PTypes}" />
+                                    <apex:actionSupport event="onchange" reRender="theTransSection"/>
+                                </apex:selectList>
+                               <!-- <apex:inputField required="true" id="pType" value="{!thePayment.Payment_Type__c}" >
+                                    
+                                </apex:inputField>-->
+                            </apex:actionRegion>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>                        
+                                       
+                    <apex:inputField rendered="{!pType == 'Check'}" id="chequeNum" value="{!thePayment.causeview__Cheque_Num__c}" />                                        
+                    
+                    <apex:inputField required="true" rendered="{!pType == 'Credit Card' || pType == 'Credit Card - Offline'}" id="ccType" value="{!thePayment.causeview__Credit_Card_Type__c}" />                                        
+                    <apex:inputField required="true" rendered="{!pType == 'Credit Card' || pType == 'Credit Card - Offline'}" id="ccNum" value="{!thePayment.causeview__Credit_Card_Number__c}" />                    
+                    <apex:pageBlockSectionItem rendered="{!pType == 'Credit Card' || pType == 'Credit Card - Offline'}" >
+                        <apex:outputLabel value="Month" />
+                        <apex:outputPanel >
+                            <apex:selectList required="true" size="1" value="{!ccExpM}">
+                                <apex:selectOptions value="{!months}" />
+                            </apex:selectList>                        
+                        </apex:outputPanel>        
+                    </apex:pageBlockSectionItem>  
+                    <apex:pageBlockSectionItem rendered="{!pType == 'Credit Card' || pType == 'Credit Card - Offline'}" >
+                        <apex:outputLabel value="Year" />
+                        <apex:outputPanel >
+                            <apex:selectList required="true" size="1" value="{!ccExpY}">
+                                <apex:selectOptions value="{!years}" />
+                            </apex:selectList>                           
+                        </apex:outputPanel>        
+                    </apex:pageBlockSectionItem>   
+                    <apex:pageBlockSectionItem rendered="{!pType == 'Credit Card' || pType == 'Credit Card - Offline'}" >
+                        <apex:outputLabel for="ccCVV" value="CVV" />               
+                        <apex:inputText required="true" id="ccCVV" value="{!ccCVV}" />                                                        
+                    </apex:pageBlockSectionItem>                       
+                    
+                    <apex:inputField required="true" label="Amount" value="{!theGift.causeview__Expected_Amount__c}"/>
+                    <apex:inputcheckbox value="{!createReceipt}" label="Create Receipt for Matching Gift" />
+            </apex:pageblockSection>                           
+        </apex:pageBlock>          
+        <apex:pageBlock title="Allocation Details" >
+            <apex:pageBlockTable value="{!theGiftDetails}" var="item">
+                <apex:column value="{!item.causeview__Allocation_Date__c}"/>
+                <apex:column value="{!item.Campaign__r.Name}"/>
+                <apex:column value="{!item.New_Campaign__r.Name}"/>
+                <apex:column value="{!item.causeview__Tribute__c}"/>
+                <apex:column value="{!item.causeview__Product__c}"/>
+                <apex:column value="{!item.causeview__Fund_Name__c}"/>
+                <apex:column value="{!item.causeview__Amount__c}"/>
+                <apex:column value="{!item.causeview__Approved_Amount__c}"/>                                                                                                                                
+            </apex:pageBlockTable>        
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton action="{!Submit}" value="Submit"/>
+                <apex:commandButton action="{!Cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>             
+        </apex:pageBlock>  
+   </apex:form>                          
+                                                                                   
+</apex:page>

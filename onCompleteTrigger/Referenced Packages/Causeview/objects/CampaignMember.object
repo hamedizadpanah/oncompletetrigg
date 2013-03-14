@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Form_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>&quot;https://api.causeview.com/form/v1.6/&quot; &amp; IF( Campaign.Paid_Event__c , &quot;a0JC000000D2mUD&quot;, &quot;a0JC000000DB7bg&quot;) &amp; &quot;?FirstName=&quot; &amp; Contact.FirstName &amp; &quot;&amp;LastName=&quot; &amp; Contact.LastName &amp; &quot;&amp;EventName=&quot; &amp;  Campaign.Name &amp; IF( Campaign.Paid_Event__c , &quot;&amp;Unit=&quot; &amp;  TEXT(Campaign.Event_Fee__c) , &quot;&quot;)</formula>
+        <label>Form URL</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSVP__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>RSVP</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Attending</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Maybe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+</CustomObject>

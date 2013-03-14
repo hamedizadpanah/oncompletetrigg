@@ -1,0 +1,40 @@
+<apex:page controller="causeview.recurringMaintController" tabStyle="causeview__Recurring_Donation__c" action="{!init}">
+  <apex:sectionHeader title="{!$ObjectType.causeview__Recurring_Donation__c.Label}" subtitle="{!recurringDonation.Name}"/>
+  <apex:includeScript value="{!URLFOR($Resource.causeview__gpAssets, 'jquery.js')}"/>
+  <script type="text/javascript" src="https://api.causeview.com/tools/crossdomain.js"></script>
+  <apex:outputPanel rendered="{!OR(wizardStep==1,wizardStep==3)}" layout="none">
+  <script>
+   $(function(){
+      var accountId = '{!URLENCODE(settings.causeview__CV_Account_Id__c)}';
+      var url = '{!URLENCODE(settings.causeview__Stock_Form_URL__c)}?callback=?';
+      var errorMessage = "Could not retrive your organization form configuration, please contact the administrator";
+      
+      $.getJSON(decodeURIComponent(url), { type:"{!URLENCODE(recurringAction)}",accountId:accountId }, function(result) {
+         if ($.isEmptyObject(result)) {
+           window.alert(errorMessage + ' Empty');
+           return;
+         }
+         if (!result.hasOwnProperty("FormId") || !result.FormId) {
+           window.alert(errorMessage + ' Could not find FormId');
+           return;
+        }
+         var src = result.Domain + result.FormUrl + "?accountid=" + accountId + "&encryptedRecurringId=" + '{!URLENCODE(recurringDonation.causeview__Encrypted_Key__c)}' + "&RecurringId=" +  '{!URLENCODE(recurringDonation.Id)}';
+         var frameHeight = (result.FrameHeight)? result.FrameHeight+"px":"250px";
+         $("#causeview_iframe").loadCauseViewForm({src:src, api:result.Domain, frame_height:frameHeight });  
+        
+      }).error(function(xhr, ajaxOptions, thrownError)
+      {
+        alert(xhr.statusText + ' : ' + thrownError);
+      }).success(function() {  });
+      
+   });
+  </script>
+  </apex:outputPanel>
+  <apex:form >
+     <apex:pagemessages ></apex:pagemessages>
+     <apex:commandLink value="Go back to {!recurringDonation.Name}" action="{!cancel}" style="padding-bottom:10px; display:block;"/>
+     <apex:pageBlock title="Recurring:{!IF(wizardStep=1,'Update Credit Card Information','Cancel Recurring Gift')}" mode="edit" rendered="{!OR(wizardStep==1,wizardStep==3)}">
+        <div id="causeview_iframe" class="causeviewContainer"></div>
+     </apex:pageBlock>
+  </apex:form>
+</apex:page>

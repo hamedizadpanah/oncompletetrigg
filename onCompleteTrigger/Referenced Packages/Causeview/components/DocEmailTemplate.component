@@ -1,0 +1,10 @@
+<apex:component access="global" controller="causeview.DocEmailTemplateController">
+  <apex:attribute name="recipientType" type="String" assignTo="{!recipientType}" description="The Salesforce.com object receiving the email." />
+  <apex:attribute name="relatedToType" type="String" assignTo="{!relatedToType}"  description="The Salesforce.com object from which the template retrieves merge field data. Valid objects: objects that have a standard controller, including custom objects Visualforce supports."/>
+  <apex:attribute name="recipientId" type="String" assignTo="{!recipientId}"   description=""/>
+  <apex:attribute name="relatedToId" type="String" assignTo="{!relatedToId}"   description=""/>
+  <apex:attribute name="dupe" type="String" assignTo="{!isDupe}" description=""/>
+  
+  <apex:outputText escape="false" value="{!content}"></apex:outputText>
+  
+</apex:component>

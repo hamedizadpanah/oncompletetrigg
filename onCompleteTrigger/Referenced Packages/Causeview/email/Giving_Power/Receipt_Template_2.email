@@ -1,0 +1,17 @@
+<messaging:emailTemplate subject="Causeview Receipt" recipientType="Contact" relatedToType="causeview__Receipt__c">
+    <messaging:htmlEmailBody >
+          <c:DocEmailTemplate recipientType="Contact" relatedToType="Receipt__c" 
+               recipientId="{!recipient.Id}" relatedToId="{!relatedTo.Id}"/>
+    </messaging:htmlEmailBody>
+    
+    <messaging:plainTextEmailBody >
+
+    </messaging:plainTextEmailBody>
+    
+      
+    <messaging:attachment filename="OfficialTaxReceipt.pdf" renderAs="PDF">
+         <c:DocPDFTemplate recipientType="Contact" relatedToType="Receipt__c" 
+            recipientId="{!recipient.Id}" relatedToId="{!relatedTo.Id}"/>
+    </messaging:attachment>
+    
+</messaging:emailTemplate>

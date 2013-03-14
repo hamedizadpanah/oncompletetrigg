@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>19.0</apiVersion>
+    <available>true</available>
+    <description>Standard Causeview receipt template</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Receipt Template 2</name>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>52</minorNumber>
+        <namespace>npe4</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>55</minorNumber>
+        <namespace>npe5</namespace>
+    </packageVersions>
+    <style>none</style>
+    <subject>Causeview Receipt</subject>
+    <type>visualforce</type>
+</EmailTemplate>

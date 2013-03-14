@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>head1</letterhead>
+    <name>RSVP</name>
+    <style>freeForm</style>
+    <subject>You are invited to {!CampaignMember.Campaign}</subject>
+    <textOnly>Hello {!CampaignMember.FirstName},
+
+
+You are invited to {!CampaignMember.Campaign}.
+
+
+Please click the link below and RSVP to the event.
+
+
+https://www.opinov.com/breakeven/web/rsvp.html?FirstName={!CampaignMember.FirstName}&amp;LastName={!CampaignMember.LastName}&amp;MID={!CampaignMember.ContactId}&amp;CID={!CampaignMember.Id}&amp;EventName={!CampaignMember.Campaign}
+
+
+Click 
+here to RSVP</textOnly>
+    <type>html</type>
+</EmailTemplate>

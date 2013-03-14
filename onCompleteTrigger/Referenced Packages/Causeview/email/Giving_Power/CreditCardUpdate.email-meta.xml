@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notifies donor their credit card is expiring and provides link to update their credit card information.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>CreditCardUpdate</name>
+    <style>none</style>
+    <subject>Your Credit Card is Expiring</subject>
+    <textOnly>Test.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

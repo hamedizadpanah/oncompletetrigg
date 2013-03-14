@@ -1,0 +1,969 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Advocate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checked if constituent is involved in advocacy</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked if constituent is involved in advocacy</inlineHelpText>
+        <label>Advocate</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Anonymous__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Identifies if individual would like to remain anonymous.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check if individual would like to remain anonymous.</inlineHelpText>
+        <label>Anonymous</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Appeal_Recovery_Gift_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Appeal Recovery Gift Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Average_Gift__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Average gift amount excluding largest and smallest gift</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Average gift amount excluding largest and smallest gift</inlineHelpText>
+        <label>Average Gift</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Consecutive_Years_of_Giving__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Consecutive Years of Giving</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Consecutive_Years_of_Transactions__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Consecutive Years of Transactions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Constituent_Codes__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Constituent Codes</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Placeholder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Constituent_Count__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Constituent Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Constituent_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines ID for each constituent.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>When in the batch entry interface - you can use this field to search on First Name, Last Name or Postal Code</inlineHelpText>
+        <label>Constituent ID</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_of_First_Gift__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Date of First Gift</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_of_Last_Event_Attended__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The Date of the last event this individual has attended.</inlineHelpText>
+        <label>Date of Last Event Attended</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_of_Last_Gift__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Date of Last Gift</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Days_Since_Last_Gift__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Number of days since constituent&apos;s last gift</description>
+        <externalId>false</externalId>
+        <formula>TODAY() - Date_of_Last_Gift__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Number of days since constituent&apos;s last gift</inlineHelpText>
+        <label>Days Since Last Gift</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Deceased_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Deceased date of individual.</description>
+        <externalId>false</externalId>
+        <label>Deceased Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Deceased__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Check if deceased.</description>
+        <externalId>false</externalId>
+        <label>Deceased</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Direct_Mail_Recipient__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Identifies if individual should receive direct mail.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check if this individual should receive direct mail.</inlineHelpText>
+        <label>Direct Mail Recipient</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Donor_Level__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Donor Level based on years of consecutive giving and total $ giving.</description>
+        <externalId>false</externalId>
+        <label>Donor Level</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Prospect/Supporter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Occasional Donor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Frequent Donor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Major/Planned Donor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Donor__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checked if constituent has given a gift in past two fiscal years</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked if constituent has given a gift in past two fiscal years</inlineHelpText>
+        <label>Donor</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Event_Attended__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Flagged if the individual has been to an Event.</inlineHelpText>
+        <label>Event Attendee</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>First_Time_Donor__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(Date_of_First_Gift__c = Date_of_Last_Gift__c, &apos;True&apos;, &apos;False&apos;)</formula>
+        <label>First Time Donor</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gender__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Gender of individual.</description>
+        <externalId>false</externalId>
+        <label>Gender</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Male</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Female</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Giving_of_Income__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( Total_Fiscal_Year_Giving__c = 0, 0, ( Total_Fiscal_Year_Giving__c  / Income__c ))</formula>
+        <label>Giving % of Income</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Household_Primary_Contact__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Check if contact is the primary household member.</description>
+        <externalId>false</externalId>
+        <label>Household Primary Contact</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Household_Role__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Role in household</description>
+        <externalId>false</externalId>
+        <label>Household Role</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Father</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mother</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Child</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Grandmother</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Grandfather</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Uncle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aunt</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tenant</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Household__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Relationship to a household.</description>
+        <externalId>false</externalId>
+        <label>Household</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Household Members</relationshipLabel>
+        <relationshipName>HouseholdContacts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Income__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Annual Income</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Languages__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Languages</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Largest_Gift__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Amount of largest gift to date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Amount of largest gift to date</inlineHelpText>
+        <label>Largest Gift</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Last_Gift_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Last Gift Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Lifetime_Appeal_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Lifetime Appeal Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Major_Gift_Donor__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Major Gift Donor</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Member__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checked if constituent is a current member</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked if constituent is a current member</inlineHelpText>
+        <label>Member</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Name_of_Last_Event_Attended__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The Name of the last event this individual has attended.</inlineHelpText>
+        <label>Name of Last Event Attended</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Newsletter_Subscriber__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Newsletter</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Addressee__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Individual&apos;s primary addressee - used for sending mail to individual.</description>
+        <externalId>false</externalId>
+        <label>Primary Addressee</label>
+        <length>254</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Primary_Salutation__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Individual&apos;s primary salutation - used for communication with individual.</description>
+        <externalId>false</externalId>
+        <label>Primary Salutation</label>
+        <length>254</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Receipt_Preference__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the donor&apos;s receipt preference.</description>
+        <externalId>false</externalId>
+        <label>Receipt Preference</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Single Receipt</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Consolidated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Receipt</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Region</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Placeholder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Same_as_Household__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Mailing address is the same as the household.  This activates a field update to automatically populate the field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check if you would like to use the household mailing address and phone number.</inlineHelpText>
+        <label>Use Household Address &amp; Phone Number</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Secondary_Addressee__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Individual&apos;s secondary addressee - used for sending mail to individual.</description>
+        <externalId>false</externalId>
+        <label>Secondary Addressee</label>
+        <length>254</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Secondary_Salutation__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Individual&apos;s secondary salutation - used for communication with individual.</description>
+        <externalId>false</externalId>
+        <label>Secondary Salutation</label>
+        <length>254</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Solicit_Codes__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Solicit Codes</label>
+        <picklist>
+            <picklistValues>
+                <fullName>All Direct Mail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>All E-Communication</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1 Mailing Per Year</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Information Only, No Solicitation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Special Ask</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No E-Communication</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Direct Mail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Communication of Any Kind</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>MultiselectPicklist</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Steward_Acknowledgement_Letter__c</fullName>
+        <deprecated>false</deprecated>
+        <description>How many acknowledgement letters have occured with this contact</description>
+        <externalId>false</externalId>
+        <label>Acknowledgement Letter</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Steward_Emails__c</fullName>
+        <deprecated>false</deprecated>
+        <description>How many emails have occured with this contact</description>
+        <externalId>false</externalId>
+        <label>Emails</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Steward_Face_to_Face_Meetings__c</fullName>
+        <deprecated>false</deprecated>
+        <description>How many Face to Face meetings have occured with this contact</description>
+        <externalId>false</externalId>
+        <label>Face to Face Meetings</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Steward_Personal_Emails__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Personal Emails</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Steward_Phone_Calls__c</fullName>
+        <deprecated>false</deprecated>
+        <description>How many Phone calls that have occured with this contact</description>
+        <externalId>false</externalId>
+        <label>Phone Calls</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Student__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Student</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Suffix__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Suffix</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Jr.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sr.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>II</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>III</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>V</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Esq.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.D.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ph.D.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C.P.A.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.S.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>R.N.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.B.A.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>L.L.M.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ed.D.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Total_Fiscal_Gifts__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Total number of gifts by constituent within current fiscal year</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total number of gifts by constituent within current fiscal year</inlineHelpText>
+        <label>Quantity of Fiscal Gifts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Fiscal_Transaction_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Total dollar value of transactions by constituent within current fiscal year</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total dollar value of transactions by constituent within current fiscal year</inlineHelpText>
+        <label>Total Fiscal Transaction Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Fiscal_Transactions__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Total number of transactions by constituent within current fiscal year</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total number of transactions by constituent within current fiscal year</inlineHelpText>
+        <label>Quantity of Fiscal Transactions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Fiscal_Year_Giving__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Total dollar value of gifts by constituent within current fiscal year</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total dollar value of gifts by constituent within current fiscal year</inlineHelpText>
+        <label>Total Fiscal Year Giving</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Giving_Last_Year__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Total amount of giving last year</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total amount of giving last year</inlineHelpText>
+        <label>Total Giving Last Year</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Giving_Two_Years_Ago__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Total amount of giving from two years ago</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total amount of giving from two years ago</inlineHelpText>
+        <label>Total Giving Two Years Ago</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Lifetime_Fundraising__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Total lifetime fundraising by constituent.  Includes all giving, primary solicitations and soft credits</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total lifetime fundraising by constituent.  Includes all giving, primary solicitations and soft credits</inlineHelpText>
+        <label>Total Lifetime Fundraising</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Lifetime_Gifts__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Total number of gifts by constituent within lifetime</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total number of gifts by constituent within lifetime</inlineHelpText>
+        <label>Quantity of Lifetime Gifts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Lifetime_Giving__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Total dollar value of gifts by constituent within lifetime</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total dollar value of gifts by constituent within lifetime</inlineHelpText>
+        <label>Total Lifetime Giving</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Lifetime_Transaction_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Total dollar value of transactions by constituent within lifetime</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total dollar value of transactions by constituent within lifetime</inlineHelpText>
+        <label>Total Lifetime Transaction Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Lifetime_Transactions__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Total number of transactions by constituent within lifetime</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total number of transactions by constituent within lifetime</inlineHelpText>
+        <label>Quantity of Lifetime Transactions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Stewardship__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>Steward_Acknowledgement_Letter__c + Steward_Face_to_Face_Meetings__c +  Steward_Emails__c + Steward_Phone_Calls__c + Steward_Personal_Emails__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Stewardship</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Trade_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Trade Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Trade</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Trade</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Use_Household_Salutation_Addressee__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Copies the household salutation and addressee values to the primary fields.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Copies the household salutation and addressee to the primary fields.</inlineHelpText>
+        <label>Use Household Salutation &amp; Addressee</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Volunteer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checked if constituent is a current volunteer</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked if constituent is a current volunteer</inlineHelpText>
+        <label>Volunteer</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <namedFilters>
+        <fullName>nf_01IA0000000aTI9MAM_00NA0000005eqJtMAI</fullName>
+        <active>true</active>
+        <field>Gift__c.Key_Contact__c</field>
+        <filterItems>
+            <field>Contact.AccountId</field>
+            <operation>equals</operation>
+            <valueField>$Source.Organization__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+        <name>Transaction_Key Contact</name>
+        <sourceObject>Gift__c</sourceObject>
+    </namedFilters>
+    <validationRules>
+        <fullName>Household_Required</fullName>
+        <active>true</active>
+        <description>Checks that Household is populated if check boxes are set to TRUE.</description>
+        <errorConditionFormula>AND(ISBLANK(Household__c),
+OR(Same_as_Household__c = TRUE,
+Use_Household_Salutation_Addressee__c=TRUE))</errorConditionFormula>
+        <errorDisplayField>Household__c</errorDisplayField>
+        <errorMessage>&apos;Use Household Salutation &amp; Addressee&apos; or &apos;Use Household Address &amp; Phone Number&apos; cannot be checked if a Household is not selected.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Donate_Now</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Gift</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/SingleTransaction?cid={!Contact.Id}</url>
+    </webLinks>
+</CustomObject>
